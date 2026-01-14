@@ -2,53 +2,71 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Login simple</title>
+  <title>Iniciar sesión</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Proyecto Login</h1>
-    <p class="subtitle">Backend en Railway + Frontend en Vercel</p>
-
-    <div class="cards">
-      <!-- Registro -->
-      <div class="card">
-        <h2>Registro</h2>
-        <form id="register-form">
-          <label for="register-email">Email</label>
-          <input type="email" id="register-email" required />
-
-          <label for="register-password">Contraseña</label>
-          <input type="password" id="register-password" required />
-
-          <button type="submit">Registrarme</button>
-        </form>
-        <p id="register-message" class="message"></p>
+  <div class="page">
+    <div class="brand-panel">
+      <div class="brand-content">
+        <div class="brand-logo">
+          <!-- Podés reemplazar esto por un logo real -->
+          <span class="brand-icon">🔐</span>
+        </div>
+        <h1>Panel de Acceso</h1>
+        <p>
+          Login simple con backend en Railway y frontend en Vercel.
+          Ideal para practicar autenticación básica.
+        </p>
       </div>
-
-      <!-- Login -->
-      <div class="card">
-        <h2>Login</h2>
-        <form id="login-form">
-          <label for="login-email">Email</label>
-          <input type="email" id="login-email" required />
-
-          <label for="login-password">Contraseña</label>
-          <input type="password" id="login-password" required />
-
-          <button type="submit">Iniciar sesión</button>
-        </form>
-        <p id="login-message" class="message"></p>
+      <div class="brand-footer">
+        <p>© 2026 • Proyecto de práctica</p>
       </div>
     </div>
 
-    <!-- Zona que se muestra si el login fue exitoso -->
-    <div id="protected-area" class="protected hidden">
-      <h2>Zona protegida</h2>
-      <p id="protected-text">
-        Estás logueado. Acá podrías mostrar info del usuario, panel, etc.
-      </p>
-      <button id="logout-btn">Cerrar sesión</button>
+    <div class="auth-panel">
+      <div class="auth-card">
+        <h2>Iniciar sesión</h2>
+        <p class="auth-subtitle">
+          Ingresá tus credenciales para acceder.
+        </p>
+
+        <form id="login-form" class="auth-form">
+          <div class="field">
+            <label for="login-email">Email</label>
+            <input
+              type="email"
+              id="login-email"
+              autocomplete="email"
+              placeholder="usuario@ejemplo.com"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="login-password">Contraseña</label>
+            <input
+              type="password"
+              id="login-password"
+              autocomplete="current-password"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+
+          <button type="submit" id="login-button">
+            Iniciar sesión
+          </button>
+
+          <p id="login-message" class="message"></p>
+        </form>
+
+        <p class="hint">
+          * Este es un proyecto de práctica. Podés crear el usuario llamando a
+          <code>/register</code> desde Postman o similar.
+        </p>
+      </div>
     </div>
   </div>
 
