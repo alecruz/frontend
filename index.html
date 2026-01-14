@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login simple</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Proyecto Login</h1>
+    <p class="subtitle">Backend en Railway + Frontend en Vercel</p>
+
+    <div class="cards">
+      <!-- Registro -->
+      <div class="card">
+        <h2>Registro</h2>
+        <form id="register-form">
+          <label for="register-email">Email</label>
+          <input type="email" id="register-email" required />
+
+          <label for="register-password">Contraseña</label>
+          <input type="password" id="register-password" required />
+
+          <button type="submit">Registrarme</button>
+        </form>
+        <p id="register-message" class="message"></p>
+      </div>
+
+      <!-- Login -->
+      <div class="card">
+        <h2>Login</h2>
+        <form id="login-form">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" required />
+
+          <label for="login-password">Contraseña</label>
+          <input type="password" id="login-password" required />
+
+          <button type="submit">Iniciar sesión</button>
+        </form>
+        <p id="login-message" class="message"></p>
+      </div>
+    </div>
+
+    <!-- Zona que se muestra si el login fue exitoso -->
+    <div id="protected-area" class="protected hidden">
+      <h2>Zona protegida</h2>
+      <p id="protected-text">
+        Estás logueado. Acá podrías mostrar info del usuario, panel, etc.
+      </p>
+      <button id="logout-btn">Cerrar sesión</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
