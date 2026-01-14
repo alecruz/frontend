@@ -1,9 +1,7 @@
 :root {
   --bg: #020617;
-  --bg-soft: #020617;
   --card-bg: #020617;
   --accent: #2563eb;
-  --accent-soft: rgba(37, 99, 235, 0.12);
   --border-subtle: rgba(148, 163, 184, 0.3);
   --text-main: #e5e7eb;
   --text-muted: #9ca3af;
@@ -25,7 +23,7 @@ body {
   background:
     radial-gradient(circle at top left, #1d4ed8 0, transparent 50%),
     radial-gradient(circle at bottom right, #0ea5e9 0, transparent 50%),
-    var(--bg);
+    #020617;
   min-height: 100vh;
 }
 
@@ -36,7 +34,7 @@ body {
   min-height: 100vh;
 }
 
-/* Panel de marca (lado izquierdo) */
+/* Panel de marca (lado izquierdo en desktop) */
 
 .brand-panel {
   flex: 1.1;
@@ -233,16 +231,22 @@ button:disabled {
   border: 1px solid rgba(148, 163, 184, 0.2);
 }
 
-/* Responsivo */
+/* 📱 Responsivo */
 
+/* Tablets / pantallas medianas */
 @media (max-width: 880px) {
   .page {
     flex-direction: column;
   }
 
   .brand-panel {
-    padding: 24px 20px;
-    text-align: left;
+    padding: 24px 20px 12px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .brand-content {
+    max-width: 100%;
   }
 
   .auth-panel {
@@ -250,6 +254,54 @@ button:disabled {
   }
 
   .auth-card {
-    max-width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+/* Celulares chicos */
+@media (max-width: 520px) {
+  body {
+    min-height: 100vh;
+  }
+
+  .brand-panel {
+    padding: 18px 16px 8px;
+  }
+
+  .brand-logo {
+    margin-left: auto;
+    margin-right: auto;
+    width: 48px;
+    height: 48px;
+  }
+
+  .brand-panel h1 {
+    font-size: 24px;
+  }
+
+  .brand-panel p {
+    font-size: 13px;
+  }
+
+  .brand-footer {
+    display: none; /* para que no quede demasiado texto abajo */
+  }
+
+  .auth-panel {
+    padding: 8px 12px 24px;
+  }
+
+  .auth-card {
+    border-radius: 18px;
+    padding: 20px 16px 16px;
+    box-shadow:
+      0 12px 28px rgba(15, 23, 42, 0.85),
+      0 0 0 1px rgba(148, 163, 184, 0.3) inset;
+  }
+
+  input,
+  button {
+    font-size: 15px;
   }
 }
